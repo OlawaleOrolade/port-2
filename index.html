@@ -229,12 +229,19 @@
       footer { height: 64px; }
       .contact-block { font-size: 17px; line-height: 1.8; }
 .contact-block p { margin-bottom: 6px; }
-      .top-right { top: 16px; right: 20px; }
+     .top-right { position: static; text-align: left; align-items: flex-start; margin-bottom: 16px; }
       .top-right-time, .top-right-weather, .top-right-location { font-size: 11px; }
     }
 
     @media (max-width: 480px) {
       .name { font-size: 40px; }
+      .top-right {
+  position: static;
+  text-align: left;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  pointer-events: auto;
+}
       .current-role, .previous-role { font-size: 24px; }
       .footer-item { font-size: 20px; padding: 0 36px; }
       .contact-block { font-size: 18px; }
@@ -245,7 +252,10 @@
 </head>
 <body>
 
-  <div class="top-right">
+
+
+  <main class="main-content">
+      <div class="top-right">
     <span class="top-right-time" id="live-time">--:--:-- --</span>
     <span class="top-right-weather">
       <span id="weather-icon"></span>
@@ -254,8 +264,6 @@
     </span>
     <span class="top-right-location" id="weather-city">Locating...</span>
   </div>
-
-  <main class="main-content">
     <h1 class="name">Olawale Orolade</h1>
 
     <p class="current-role">
